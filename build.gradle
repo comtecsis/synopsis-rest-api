@@ -8,7 +8,7 @@ plugins {
 
 group = 'pe.com.synopsis.training'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '8'
 
 configurations {
 	compileOnly {
@@ -17,14 +17,24 @@ configurations {
 }
 
 repositories {
+	mavenLocal()
 	mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'pe.com.synopsis:synopsis-client-soap:1.0'
+	implementation 'org.springframework.ws:spring-ws-core:3.0.10.RELEASE'
+	implementation 'javax.xml.bind:jaxb-api:2.3.0'
+	implementation 'com.sun.xml.bind:jaxb-core:2.3.0'
+	implementation 'com.sun.xml.bind:jaxb-impl:2.3.0'
+	implementation 'javax.activation:activation:1.1.1'
+	implementation 'com.sun.xml.messaging.saaj:saaj-impl:1.5.0'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
