@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import pe.com.synopsis.client.soap.WsCountryClient;
 
+
 @SpringBootApplication
 public class RestApiApplication implements CommandLineRunner{
 
