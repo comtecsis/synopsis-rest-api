@@ -10,4 +10,5 @@ public class CountryResponse implements Serializable {
     private Integer populationWeb;
     private String capitalWeb;
     private String currencyWeb;
+    private String uuid;
 }
