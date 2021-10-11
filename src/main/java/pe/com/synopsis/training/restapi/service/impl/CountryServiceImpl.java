@@ -17,7 +17,7 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public CountryResponse findByName(String value) throws CountryException {
-        GetCountryResponse respWs = client.findByName(value);
+        GetCountryResponse respWs = client.getCountry(value);
         if(respWs.getCountry() == null){
             throw new CountryException();
         }
