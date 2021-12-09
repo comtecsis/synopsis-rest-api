@@ -1,12 +1,12 @@
 package pe.com.synopsis.training.restapi.converter;
 
-import io.spring.guides.gs_producing_web_service.Country;
-import io.spring.guides.gs_producing_web_service.GetCountryResponse;
+import java.util.UUID;
+
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import pe.com.synopsis.training.restapi.bean.response.CountryResponse;
 
-import java.util.UUID;
+import pe.com.synopsis.training.restapi.bean.response.CountryResponse;
+import ws.synopsis.guides.gs_producing_web_service.Country;
 
 @Component
 public class CountryConverter implements Converter<Country, CountryResponse> {

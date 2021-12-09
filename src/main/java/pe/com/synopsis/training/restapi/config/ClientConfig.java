@@ -23,7 +23,7 @@ public class ClientConfig {
     public Jaxb2Marshaller marshaller()
     {
         Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        marshaller.setPackagesToScan("io.spring.guides.*");
+        marshaller.setPackagesToScan("ws.synopsis.*");
         return marshaller;
     }
 

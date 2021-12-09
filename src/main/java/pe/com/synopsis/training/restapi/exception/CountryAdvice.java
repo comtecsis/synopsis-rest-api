@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import pe.com.synopsis.training.restapi.bean.response.ErrorResponse;
+import pe.com.synopsis.training.restapi.bean.response.base.GenResponse;
+import pe.com.synopsis.training.restapi.enumerations.StatusEnum;
 
 @ControllerAdvice
 public class CountryAdvice {
@@ -18,13 +20,13 @@ public class CountryAdvice {
     @ExceptionHandler(CountryException.class)
     public ResponseEntity<?> countryException(CountryException e) {
         logger.error(e.getMessage(), e);
-        return ResponseEntity.internalServerError().body(ErrorResponse.builder().code("ERROR-0001").message("Pais no encontrado").build());
+        return ResponseEntity.internalServerError().body(GenResponse.builder().status(StatusEnum.UNEXPECTED_ERROR.getStatus()).build());
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> exception(Exception e) {
         logger.error(e.getMessage(), e);
-        return ResponseEntity.internalServerError().body(ErrorResponse.builder().code("ERROR-0000").message("Error inesperado.").build());
+        return ResponseEntity.internalServerError().body(GenResponse.builder().status(StatusEnum.UNEXPECTED_ERROR.getStatus()).build());
     }
 
 }
