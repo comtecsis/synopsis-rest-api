@@ -1,10 +1,13 @@
 package pe.com.synopsis.training.restapi.bean.response;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@Data
+@Data @Builder @NoArgsConstructor @AllArgsConstructor
 public class CountryResponse implements Serializable {
     private String nameWeb;
     private Integer populationWeb;
